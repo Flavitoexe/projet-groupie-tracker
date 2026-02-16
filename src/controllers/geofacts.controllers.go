@@ -21,37 +21,6 @@ func DisplayListCountries(w http.ResponseWriter, r *http.Request) {
 	helper.RenderTemplate(w, r, "menu", data)
 }
 
-// func DisplayFilter(w http.ResponseWriter, r *http.Request) {
-
-// 	hpNbr, _ := strconv.Atoi(strings.TrimSpace(r.FormValue("hp")))
-
-// 	types := r.Form["type"]
-// 	fmt.Println(types)
-
-// 	data, dataStatusCode, dataError := services.GetAllPokemons()
-// 	if dataStatusCode != http.StatusOK || dataError != nil {
-// 		log.Printf("Erreur DisplayFilter - %s", dataError.Error())
-// 		http.Error(w, dataError.Error(), http.StatusMovedPermanently)
-// 		return
-// 	}
-
-// 	validPokemons := []services.Pokemon{}
-
-// 	for index := 0; index < len(*data); index++ {
-// 		checkType := slices.ContainsFunc((*data)[index].Types, func(item services.Type) bool {
-// 			return slices.Contains(types, strings.ToLower(item.Name))
-// 		})
-
-// 		checkHp := (*data)[index].Stats.HP >= hpNbr
-
-// 		if (checkHp || hpNbr == 0) && (checkType || len(types) == 0) {
-// 			validPokemons = append(validPokemons, (*data)[index])
-// 		}
-// 	}
-
-// 	helper.RenderTemplate(w, r, "filter_geofacts", validPokemons)
-// }
-
 func DisplayCountriesByRegion(w http.ResponseWriter, r *http.Request) {
 
 	region := r.FormValue("region")
@@ -126,7 +95,6 @@ func DisplayCountriesByLang(w http.ResponseWriter, r *http.Request) {
 
 	var dataTemp TempCountryData
 
-	// dataTemp.Data, dataTemp.DataStatusCode, dataTemp.DataErr = services.GetCountryByName(lang)
 	dataTemp.Data, dataTemp.DataStatusCode, dataTemp.DataErr = services.GetAllCountries()
 	if dataTemp.DataStatusCode != http.StatusOK && dataTemp.DataStatusCode != http.StatusNotFound {
 		log.Printf("Erreur DisplayCountriesByLang - %s", dataTemp.DataErr.Error())

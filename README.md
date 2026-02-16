@@ -30,6 +30,12 @@ La recherche des pays peut se faire de plusieurs manières :
  - Golang
  - Api Countries ([Documentation](https://www.apicountries.com/docs))
 
+## Endpoints utilisés
+
+ - https://www.apicountries.com/countries, pour obtenir tous les pays 
+ - https://www.apicountries.com/region/%s (avec %s le continent choisie par l'utilisateur), pour obtenir tous les pays d'un continent
+ - https://www.apicountries.com/alpha/%s (avec %s l'alphacode du pays choisi), pour obtenir un pays par son alphacode 2 ou 3 (FR, FRA..)
+ - https://www.apicountries.com/name/%s (avec %s le nom du pays), pour obtenir un pays par son nom
 
 ## Structure du projet
 
@@ -70,6 +76,10 @@ geofacts
         menu.html
         region_choice.html
 ```
+
+menu.html : Page principale en accédant au site
+
+error.html : Page d'erreur personnalisée
 
 ## Installation et utilisation
 
