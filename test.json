@@ -1,0 +1,190 @@
+
+// Rest Countries 
+[
+    {
+        "name": {
+            "nativeName": {
+                "fra": {
+                    "official": "République française",
+                    "common": "France"
+                }
+            }
+        },
+        "tld": [
+            ".fr"
+        ],
+        "cca2": "FR",
+        "ccn3": "250",
+        "cioc": "FRA",
+        "independent": true,
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "symbol": "€",
+                "name": "Euro"
+            }
+        },
+        "capital": [
+            "Paris"
+        ],
+        "region": "Europe",
+        "subregion": "Western Europe",
+        "languages": {
+            "fra": "French"
+        },
+        "borders": [
+            "AND",
+            "BEL",
+            "DEU",
+            "ITA",
+            "LUX",
+            "MCO",
+            "ESP",
+            "CHE"
+        ],
+        "area": 543908.0,
+        "demonyms": {
+            "fra": {
+                "f": "Française",
+                "m": "Français"
+            }
+        },
+        "cca3": "FRA",
+        "maps": {
+            "googleMaps": "https://goo.gl/maps/g7QxxSFsWyTPKuzd7",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/1403916"
+        },
+        "population": 66351959,
+        "car": {
+            "signs": [
+                "F"
+            ],
+            "side": "right"
+        },
+        "timezones": [
+            "UTC-10:00",
+            "UTC-09:30",
+            "UTC-09:00",
+            "UTC-08:00",
+            "UTC-04:00",
+            "UTC-03:00",
+            "UTC+01:00",
+            "UTC+02:00",
+            "UTC+03:00",
+            "UTC+04:00",
+            "UTC+05:00",
+            "UTC+10:00",
+            "UTC+11:00",
+            "UTC+12:00"
+        ],
+        "continents": [
+            "Europe"
+        ],
+        "flags": {
+            "png": "https://flagcdn.com/w320/fr.png",
+            "svg": "https://flagcdn.com/fr.svg",
+            "alt": "The flag of France is composed of three equal vertical bands of blue, white and red."
+        },
+        "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/fr.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/fr.svg"
+        },
+        "startOfWeek": "monday",
+        "postalCode": {
+            "format": "#####"
+        }
+    }
+]
+
+
+// Api Countries
+{
+    "name": "France",
+    "topLevelDomain": [
+        ".fr"
+    ],
+    "alpha2Code": "FR",
+    "alpha3Code": "FRA",
+    "capital": "Paris",
+    "subregion": "Western Europe",
+    "region": "Europe",
+    "population": 67391582,
+    "demonym": "French",
+    "area": 640679,
+    "timezones": [
+        "UTC-10:00",
+        "UTC-09:30",
+        "UTC-09:00",
+        "UTC-08:00",
+        "UTC-04:00",
+        "UTC-03:00",
+        "UTC+01:00",
+        "UTC+02:00",
+        "UTC+03:00",
+        "UTC+04:00",
+        "UTC+05:00",
+        "UTC+10:00",
+        "UTC+11:00",
+        "UTC+12:00"
+    ],
+    "borders": [
+        "AND",
+        "BEL",
+        "DEU",
+        "ITA",
+        "LUX",
+        "MCO",
+        "ESP",
+        "CHE"
+    ],
+    "nativeName": "France",
+    "flags": {
+        "png": "https://flagcdn.com/w320/fr.png"
+    },
+    "currencies": [
+        {
+            "code": "EUR",
+            "name": "Euro",
+            "symbol": "€"
+        }
+    ],
+    "languages": [
+        {
+            "name": "French",
+            "nativeName": "français"
+        }
+    ],
+    "flag": "https://flagcdn.com/fr.svg",
+    "regionalBlocs": [
+        {
+            "acronym": "EU",
+            "name": "European Union"
+        }
+    ],
+    "cioc": "FRA",
+    "independent": true
+}
+
+
+{
+    "name":"France",
+    "topLevelDomain":[".fr"],
+    "alpha2Code":"FR",
+    "alpha3Code":"FRA",
+    "capital":"Paris",
+    "subregion":"Western Europe",
+    "region":"Europe",
+    "population":67391582,
+    "area":640679,
+    "timezones":["UTC-10:00","UTC-09:30","UTC-09:00","UTC-08:00","UTC-04:00","UTC-03:00","UTC+01:00","UTC+02:00","UTC+03:00","UTC+04:00","UTC+05:00","UTC+10:00","UTC+11:00","UTC+12:00"],
+    "borders":["AND","BEL","DEU","ITA","LUX","MCO","ESP","CHE"],
+    "currencies":[
+        {
+            "code":"EUR",
+            "name":"Euro",
+            "symbol":"€"
+        }
+    ],
+    "independent":true
+}
+

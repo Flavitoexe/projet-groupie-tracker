@@ -1,0 +1,50 @@
+{{define "region_choice"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays par continents</title>
+    <link rel="stylesheet" href="static/css/region_choice_style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Menu</a>
+            <a href="#">Favoris</a>
+            <a href="#">Collections</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="" method="get" class="searchbar">
+            <label for="regions">Choisissez un continent : </label>
+            <select name="region" id="regions">
+                <option value="europe">Europe</option>
+                <option value="africa">Afrique</option>
+                <option value="asia">Asie</option>
+                <option value="americas">Amériques (Nord et Sud)</option>
+                <option value="oceania">Océanie</option>
+                <option value="polar">Polaire</option>
+            </select>
+            <button type="submit">Rechercher</button>
+        </form>
+
+        <div class="list-countries">
+            {{range .}}
+            <div class="country">
+                <h2><a href="/country/details?alpha3code={{.Alpha3Code}}">{{.Name}} - {{.Alpha2Code}}</a></h2>
+                <img src="{{(.Flags).Png}}" alt="Drapeau de {{.Name}}">
+                <div>
+                    <p>Capitale : {{.Capital}}</p>
+                    <p>Continent : {{.Region}}</p>
+                </div>
+            </div>
+            {{end}}
+        </div>
+
+    </main>
+</body>
+</html>
+{{end}}

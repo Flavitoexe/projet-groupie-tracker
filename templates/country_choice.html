@@ -1,0 +1,44 @@
+{{define "country_choice"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/country_choice.css">
+    <title>Choix du pays</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Menu</a>
+            <a href="#">Favoris</a>
+            <a href="#">Collections</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="" method="GET" class="searchbar">
+            <input type="text" name="name" placeholder="Pays (Anglais)">
+            <button type="submit">Rechercher</button>
+        </form>
+
+        {{if eq .DataStatusCode 404}}
+        <p>Rien trouvé</p>
+        {{else}}
+        <div class="list-countries">
+            {{range .Data}}
+            <div class="country">
+                <h2><a href="/country/details?alpha3code={{.Alpha3Code}}">{{.Name}} - {{.Alpha2Code}}</a></h2>
+                <img src="{{(.Flags).Png}}" alt="Drapeau de {{.Name}}">
+                <div>
+                    <p>Capitale : {{.Capital}}</p>
+                    <p>Continent : {{.Region}}</p>
+                </div>
+            </div>
+            {{end}}
+        {{end}}
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

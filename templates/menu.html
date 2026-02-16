@@ -1,0 +1,37 @@
+{{define "menu"}}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Menu</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Menu</a>
+            <a href="#">Favoris</a>
+            <a href="#">Collections</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="list-service">
+            <div>
+                <a href="/countries" class="button-redirect">Pays d'un continent</a>
+            </div>
+            <div>
+                <a href="/countries-by-lang" class="button-redirect">Pays en fonction de la langue</a>
+            </div>
+            <div>
+                <a href="/country" class="button-redirect">Infos d'un pays par nom</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+{{end}}

@@ -1,0 +1,54 @@
+{{define "country_details"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/country_details.css">
+    <title>Détails du pays</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Menu</a>
+            <a href="#">Favoris</a>
+            <a href="#">Collections</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="country-details">
+            <div class="upper-details">
+                <h2>{{.Name}}</h2>
+                <h2>{{.Alpha2Code}}/{{.Alpha3Code}}</h2>
+                <img src="{{(.Flags).Png}}" alt="Drapeau de {{.Name}}">
+            </div>
+            <div class="lower-details">
+                <p>Capitale : {{.Capital}}</p>
+                <p>Continent : {{.Region}}</p>
+                <p>Region : {{.Subregion}}</p>
+                <p>Population : {{.Population}}</p>
+                <p>Aire : {{.Area}} m²</p>
+                <p>Langue : 
+                    {{range .Languages}}
+                        {{.Name}}</p>
+                    {{end}}
+                <p>Monnaie : {{(index .Currencies 0).Name}} | {{(index .Currencies 0).Code}} | {{(index .Currencies 0).Symbol}}</p>
+                <p>Domaine de premier niveau : 
+                    {{range .TopLevelDomain}}
+                        {{.}}
+                    {{end}}
+                </p>
+                <p>Pays frontaliers : </p>
+                <ul>
+                    {{range .Borders}}
+                    <li><a href="/country/details?alpha3code={{.}}">{{.}}</a></li>
+                    {{end}}
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

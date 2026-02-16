@@ -1,0 +1,73 @@
+{{define "country_lang"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/country_lang.css">
+    <title>Pays par langue</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Menu</a>
+            <a href="#">Favoris</a>
+            <a href="#">Collections</a>
+        </nav>
+    </header>
+
+    <form action="" method="get">
+        <div>
+            <h1>Langues : </h1>
+            <div>
+                <input type="checkbox" name="lang" id="french" value="french">
+                <label for="french">Français</label>
+            </div>
+            <div>
+                <input type="checkbox" name="lang" id="english" value="english">
+                <label for="english">Anglais</label>
+            </div>
+            <div>
+                <input type="checkbox" name="lang" id="spanish" value="spanish">
+                <label for="spanish">Espagnol</label>
+            </div>
+            <div>
+                <input type="checkbox" name="lang" id="chinese" value="chinese">
+                <label for="chinese">Mandarin</label>
+            </div>
+            <div>
+                <input type="checkbox" name="lang" id="arabic" value="arabic">
+                <label for="arabic">Arabe</label>
+            </div>
+            <div>
+                <input type="checkbox" name="lang" id="russian" value="russian">
+                <label for="russian">Russe</label>
+            </div>
+            <div>
+                <input type="checkbox" name="lang" id="portugese" value="portugese">
+                <label for="portugese">Portugais</label>
+            </div>
+        </div>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    {{if eq .DataStatusCode 404}}
+    <p>Rien trouvé</p>
+    {{else}}
+    <div class="list-countries">
+        {{range .Data}}
+        <div class="country">
+            <h2><a href="/country/details?alpha3code={{.Alpha3Code}}">{{.Name}} - {{.Alpha2Code}}</a></h2>
+            <img src="{{(.Flags).Png}}" alt="Drapeau de {{.Name}}">
+            <div>
+                <p>Capitale : {{.Capital}}</p>
+                <p>Continent : {{.Region}}</p>
+            </div>
+        </div>
+        {{end}}
+    {{end}}
+
+</body>
+</html>
+{{end}}
