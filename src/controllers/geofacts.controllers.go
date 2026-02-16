@@ -121,7 +121,7 @@ func DisplayCountriesByName(w http.ResponseWriter, r *http.Request) {
 
 func DisplayCountriesByLang(w http.ResponseWriter, r *http.Request) {
 
-	lang := r.Form["lang"]
+	lang := r.URL.Query()["lang"]
 	fmt.Println(lang)
 
 	var dataTemp TempCountryData
@@ -136,42 +136,25 @@ func DisplayCountriesByLang(w http.ResponseWriter, r *http.Request) {
 	}
 
 	validCountries := []services.Country{}
-	languages := []string{}
 
 	for index := 0; index < len(*dataTemp.Data); index++ {
+
+		languages := []string{}
 		for _, lang := range (*dataTemp.Data)[index].Languages {
-			languages = append(languages, lang.Name)
+			languages = append(languages, strings.ToLower(lang.Name))
 		}
 
-		checkType := slices.ContainsFunc(languages, func(item string) bool {
+		checkLang := slices.ContainsFunc(languages, func(item string) bool {
 			return slices.Contains(lang, item)
 		})
 
-		if checkType || len(lang) == 0 {
+		if checkLang || len(lang) == 0 {
 			validCountries = append(validCountries, (*dataTemp.Data)[index])
 		}
 	}
 
-	dataTemp.Data = &validCountries
-
-	// for index := 0; index < len(*dataTemp.Data); index++ {
-	// 	checkType := slices.ContainsFunc(languages, func(item services.Type) bool {
-	// 		return slices.Contains(lang, strings.ToLower(item.Name))
-	// 	})
-
-	// 	if checkType || len(lang) == 0 {
-	// 		validCountries = append(validCountries, (*dataTemp.Data)[index])
-	// 	}
-	// }
-
-	// for index := 0; index < len(*dataTemp.Data); index++ {
-
-	// 	for _, country_lang := range (*dataTemp.Data)[index].Languages {
-	// 		if lang == country_lang {
-
-	// 		}
-	// 	}
-	// }
+	*dataTemp.Data = validCountries
+	println(*dataTemp.Data)
 
 	helper.RenderTemplate(w, r, "country_lang", dataTemp)
 }

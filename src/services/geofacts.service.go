@@ -7,7 +7,6 @@ import (
 	"time"
 )
 
-// Country API Countries
 type Country struct {
 	Name           string   `json:"name"`
 	Alpha2Code     string   `json:"alpha2Code"`
@@ -188,41 +187,4 @@ func GetCountryByName(name string) (*[]Country, int, error) {
 
 	return &country, response.StatusCode, nil
 
-}
-
-func GetCountryByLang(lang string) (*[]Country, int, error) {
-
-	_client := http.Client{Timeout: 5 * time.Second}
-
-	request, requestErr := http.NewRequest(http.MethodGet, fmt.Sprintf("https://www.apicountries.com/lang/%s", lang), nil)
-	if requestErr != nil {
-		return nil,
-			http.StatusInternalServerError,
-			fmt.Errorf("Erreur préparation requête - %s", requestErr.Error())
-	}
-
-	response, responseErr := _client.Do(request)
-	if responseErr != nil {
-		return nil,
-			http.StatusInternalServerError,
-			fmt.Errorf("Erreur envoi requête - %s", responseErr.Error())
-	}
-
-	defer response.Body.Close()
-	if response.StatusCode != http.StatusOK {
-		return nil,
-			response.StatusCode,
-			fmt.Errorf("Erreur réponse - %s", response.Status)
-	}
-
-	var country []Country
-
-	decodeErr := json.NewDecoder(response.Body).Decode(&country)
-	if decodeErr != nil {
-		return nil,
-			http.StatusInternalServerError,
-			fmt.Errorf("Erreur decode - %s", decodeErr.Error())
-	}
-
-	return &country, response.StatusCode, nil
 }

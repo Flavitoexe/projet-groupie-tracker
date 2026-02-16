@@ -16,41 +16,43 @@
         </nav>
     </header>
 
-    <form action="" method="get">
-        <div>
-            <h1>Langues : </h1>
+    <div class="form">
+        <form action="" method="get">
             <div>
-                <input type="checkbox" name="lang" id="french" value="french">
-                <label for="french">Français</label>
+                <h3>Langues : </h3>
+                <div>
+                    <input type="checkbox" name="lang" id="french" value="french">
+                    <label for="french">Français</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="lang" id="english" value="english">
+                    <label for="english">Anglais</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="lang" id="spanish" value="spanish">
+                    <label for="spanish">Espagnol</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="lang" id="chinese" value="chinese">
+                    <label for="chinese">Mandarin</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="lang" id="arabic" value="arabic">
+                    <label for="arabic">Arabe</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="lang" id="russian" value="russian">
+                    <label for="russian">Russe</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="lang" id="portuguese" value="portuguese">
+                    <label for="portuguese">Portugais</label>
+                </div>
             </div>
-            <div>
-                <input type="checkbox" name="lang" id="english" value="english">
-                <label for="english">Anglais</label>
-            </div>
-            <div>
-                <input type="checkbox" name="lang" id="spanish" value="spanish">
-                <label for="spanish">Espagnol</label>
-            </div>
-            <div>
-                <input type="checkbox" name="lang" id="chinese" value="chinese">
-                <label for="chinese">Mandarin</label>
-            </div>
-            <div>
-                <input type="checkbox" name="lang" id="arabic" value="arabic">
-                <label for="arabic">Arabe</label>
-            </div>
-            <div>
-                <input type="checkbox" name="lang" id="russian" value="russian">
-                <label for="russian">Russe</label>
-            </div>
-            <div>
-                <input type="checkbox" name="lang" id="portugese" value="portugese">
-                <label for="portugese">Portugais</label>
-            </div>
-        </div>
 
-        <button type="submit">Envoyer</button>
-    </form>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
 
     {{if eq .DataStatusCode 404}}
     <p>Rien trouvé</p>
