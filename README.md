@@ -77,9 +77,12 @@ geofacts
         region_choice.html
 ```
 
-menu.html : Page principale en accédant au site
-
-error.html : Page d'erreur personnalisée
+ - menu.html : Page principale en accédant au site
+ - error.html : Page d'erreur personnalisée
+ - country_choice.html : Recherche de pays par le nom
+ - country_details.html : Détails des informations d'un pays 
+ - country_lang.html : Recherche de pays par la/les langue(s) parlée(s)
+ - region_choice : Liste des pays par continent 
 
 ## Installation et utilisation
 
